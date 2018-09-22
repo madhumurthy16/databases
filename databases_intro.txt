@@ -1,0 +1,112 @@
+Exercises
+		
+1. What data types do each of these values represent?
+
+A: 
+"A Clockwork Orange" - String
+42 - Integer
+09/02/1945 - Date
+98.7 - Float
+$15.99 - Float
+
+2. Explain when a database would be used. Explain when a text file would be used. 
+A:  
+A database is used when we need a way to store data that makes it easy to search for specific data, handle multiple applications accessing the data, and have data persist beyond the end of a particular application process. 
+
+A text file is used to store data that is used by a program during the execution and which does not persist beyond the end of the program.
+
+3. Describe one difference between SQL and other programming languages.
+
+A: SQL is declarative, whereas most other programming languages are procedural languages.
+
+Declarative programming is a programming paradigm where we tell the program “What” to do instead of worrying about how exactly something needs to be done.
+Procedural programming is a sub-paradigm of the imperative programming paradigm. In imperative programming paradigm we tell program “How” to do something step-by-step or solve problem exactly.
+
+4. In your own words, explain how the pieces of a database system fit together at a high level. 
+
+A: A database is an application that allows users to manage data through an interface, either a command line or a GUI. We can also set up a database as a application on a server, so another machine can send requests through the server to get data (web API’s). Databases store data in a binary file format, that are not human readable. Within the files are specialized structures that allow the database system to quickly read and change data.
+
+Databases display data using a table structure with columns that define what the data represents and rows that make up a complete conceptual unit. We use Structured Query Language(SQL) to query and manipulate the data in the databases. The strength of databases lies in the ability to perform the various queries. 
+5. Explain the meaning of table, row, column, and value.
+
+A: 
+Table: A table is a collection of related data held in a structured format within a database. It consists of columns and rows. In relational databases a table is a set of data elements (values) using a model of vertical columns (identifiable by name) and horizontal rows , the cell being the unit where a row and column intersect. A table has a specified number of columns, but can have any number of rows.
+
+Row: In the context of a relational database, a row represents a single, implicitly structured data item. In simple terms, each row in a table represents a set of related data and every row in the table has the same structure.
+
+Column: In a relational database table , columns define what the data represents. A column is a set of data values of a particular data type, one value for each row of the database.
+
+Value: A value is a piece of data or some information that the column name describes and is stored in a table cell (the intersection of the column and row). 
+6. List three data types that can be used in a table.
+	1. String
+	2. Integer
+	3. Float 
+7. Given this payments table, provide an English description of the following queries and include their results:
+ 1.   SELECT date, amount
+     FROM payments;
+	
+A: What are the date and the amount paid for each purchase?
+
+| date                     | amount    |
+| ------------------------ | --------- |
+| 2016-05-01T00:00:00.000Z | 1500.0000 |
+| 2016-05-10T00:00:00.000Z | 37.0000   |
+| 2016-05-15T00:00:00.000Z | 124.9300  |
+| 2016-05-23T00:00:00.000Z | 54.7200   |
+
+
+2.   SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+A: What are all the purchase amounts that are greater than 500.
+
+| amount    |
+| --------- |
+| 1500.0000 |
+
+
+3.   SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+A: What are the date, payee, amount and memo of all the payments made to Mega Foods?
+
+| date                     | payee      | amount   | memo      |
+| ------------------------ | ---------- | -------- | --------- |
+| 2016-05-15T00:00:00.000Z | Mega Foods | 124.9300 | Groceries |
+
+
+8. Given this users table, write SQL queries using the following criteria and include the output:
+
+1. The email and sign-up date for the user named DeAndre Data.
+
+A: SELECT email, signup 
+    FROM users
+    WHERE name = 'DeAndre Data';
+
+| email             | signup                   |
+| ----------------- | ------------------------ |
+| datad@comcast.net | 2008-01-20T00:00:00.000Z |	
+	
+2. The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+
+A: SELECT userid
+    FROM users
+    WHERE email = 'aleesia.algorithm@uw.edu';
+
+| userid |
+| ------ |
+| 1      |
+
+
+3. All the columns for the user ID equal to 4.
+
+A: SELECT * 
+    FROM users
+    WHERE userid = '4';
+
+| userid | name           | email             | signup                   |
+| ------ | -------------- | ----------------- | ------------------------ |
+| 4      | Brandy Boolean | bboolean@nasa.gov | 1999-10-15T00:00:00.000Z |
+
